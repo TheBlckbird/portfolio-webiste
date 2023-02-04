@@ -1,15 +1,26 @@
 ---
+import Counter from '../components/Counter.svelte';
+import '../styles/global.scss';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=0" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<div class="counter">
+			<Counter client:visible/>
+		</div>
 	</body>
 </html>
+
+<style lang="scss">
+	.counter {
+		width: 180px;
+	}
+</style>
